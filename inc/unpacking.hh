@@ -29,7 +29,7 @@ void unpacking<size>::unpack_them_all(stack stacko)
     int i;
     for(i=0;i<size;++i)
     {
-        this->_decoded_message[stacko.Top_get_num()]=stacko.Top_get_ch();
+        this->_decoded_message[stacko.Top_get_num()]=stacko.Top_get_ch();//dzieki numerom zawartym w pakietach odtwarzamy napis
         stacko.Pop();
     }
 }

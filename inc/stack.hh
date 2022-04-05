@@ -4,15 +4,9 @@
 #include <iostream>
 #include <assert.h>
 #include "package.hh"
-/*!
- * Ten plik zawiera definicje szablonu stack
- */
 
-/*!
- * https://storm.cis.fordham.edu/zhang/cs2200/slides/stack.pdf jakbys sie kurwa serał i zapomnial 
- */
 typedef package<1> stack_package;
-
+//postac wezla uzywanego w naszym stosie
 struct packageNode
 {
     stack_package info;
@@ -36,7 +30,7 @@ class stack{
 };
 
 
-
+//tworzenie nowego wezla i ustawianie go jako top
 void stack::Push (stack_package pack )
 {
     packageNode* location;
@@ -46,7 +40,7 @@ void stack::Push (stack_package pack )
     this->toppointero = location;
 }
 
-
+//usuwanie topowego wezla i ustawianie nastepnego jako top
 void stack::Pop()
 {
         packageNode* temp;
@@ -55,19 +49,19 @@ void stack::Pop()
         delete temp;
 }
 
-
+//pokazywanie
 void stack::Top()
 {
     this->toppointero->info.show();
 }
 
-
+//dostep do topowego pakietu i jego litery
 char stack::Top_get_ch()const
 {
     return this->toppointero->info.get_ch();
 }
 
-
+//dostep do topowego pakietu i jego numeru
 unsigned int stack::Top_get_num()const
 {
     return this->toppointero->info.get_num();

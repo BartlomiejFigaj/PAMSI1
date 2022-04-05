@@ -26,10 +26,10 @@ void packing<size>::pack_them_all(char message[])
     int i;
     package<1> pack;
     random_with_no_repeats<size> pack_random;
-    pack_random.randomize();
+    pack_random.randomize();//tworzymy tablice losowy niepowtarzajacych sie liczb
     for(i=0;i<size;++i)
     {
-        pack.change(&message[pack_random[i]],pack_random[i]);
+        pack.change(&message[pack_random[i]],pack_random[i]);//pakujemy do pakietow numery wystepowania danej litery i litere
         this->_stacko.Push(pack);
         this->_stacko.Top();
     }
