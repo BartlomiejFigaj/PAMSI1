@@ -1,0 +1,16 @@
+#
+#  To sa opcje dla kompilacji
+#
+CXXFLAGS=-g -Iinc -Wall -pedantic -std=c++17
+
+./wiadomosci: obj obj/main.o 
+	g++ -Wall -pedantic -std=c++17 -o ./wiadomosci obj/main.o 
+
+./obj:
+	mkdir ./obj
+
+./obj/main.o: app/main.cpp inc/package.hh inc/packing.hh inc/stack.hh inc/random.hh inc/unpacking.hh
+	g++ -c ${CXXFLAGS} -o obj/main.o app/main.cpp
+
+clean:
+	rm -f obj/*.o wiadomosci
